@@ -1,9 +1,11 @@
+
+// Efficient method
 #include <bits/stdc++.h>
 using namespace std;
 
 struct TwoStacks { 
-    int* arr; 
-    int cap; 
+    int* arr;
+    int cap;
     int top1, top2; 
     
     TwoStacks(int n)  
