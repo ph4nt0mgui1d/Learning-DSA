@@ -10,7 +10,7 @@ struct Node{
     }
 };
 
-Node insert(Node *head, int data, int pos){
+Node *insert(Node *head, int data, int pos){
     Node *temp = new Node(data);
     if(pos == 1){
         temp->next = head;
@@ -28,11 +28,22 @@ Node insert(Node *head, int data, int pos){
     return head;
 }
 
+void printlist(Node *head){
+    if(head == NULL)
+        return;
+
+    Node *curr = head;
+    while(curr != NULL){
+        cout << curr->data << endl;
+        curr = curr->next;
+    }
+}
+
 int main(){
     Node *head = new Node(10);
     head->next = new Node(20);
     head->next->next = new Node(30);
-    insert(head, 90, 1);
-    // rPrint(head);
+    head = insert(head, 90, 1);
+    printlist(head);
     return 0;
 }
